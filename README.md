@@ -68,7 +68,7 @@ $ cat .travis.yml
 ```
 For more details, please refer to https://travis-ci.org/scrm/scrm/builds/45372001
 
-## Doxygene<a name="doxygen"></a>
+## Doxygen<a name="doxygen"></a>
 ```bash
 $ git checkout -b doc origin/doc
 $ sudo apt-get install doxygen graphviz

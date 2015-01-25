@@ -14,11 +14,11 @@ cd CodeMonkey_scrm
 ```
 Update submodule
 ```bash
-$ git submodule init         # Initialize the local configuration file
-$ git submodule update       # Fetch all the data from scrm
+git submodule init         # Initialize the local configuration file
+git submodule update       # Fetch all the data from scrm
 ```
 ```bash
-$ cat .gitmodules 
+cat .gitmodules            # It shows the included submodule information, as the following.
 [submodule "scrm"]
 	path = scrm
 	url = https://github.com/scrm/scrm.git
@@ -31,15 +31,15 @@ git submodule add https://github.com/scrm/scrm.git
 ## Brief introduction on Automake<a name="automake"></a>
 Compile scrm
 ```bash
-$ cd scrm
-$ ./bootstrap
-$ make -mj4
+cd scrm
+./bootstrap
+make -mj4
 ```
 
 ## Testing utility<a name="unittest"></a>
 ```bash
-$ ls tests/unittests/
-$ make check -mj4
+ls tests/unittests/
+make check -mj4
 ```
 
 You should see
@@ -61,17 +61,17 @@ Testsuite summary for scrm 1.3.2.9000
 
 ## Continuous intergration<a name="travis"></a>
 ```
-$ cat .travis.yml
+cat .travis.yml
 ```
 For more details, please refer to https://travis-ci.org/scrm/scrm/builds/45372001
 
 ## Doxygen<a name="doxygen"></a>
 ```bash
-$ git checkout -b doc origin/doc        # Switch to branch doc
-$ sudo apt-get install doxygen graphviz # Download programs: doxygen, dot
-$ ./bootstrap
-$ make doxygen-run                      # Compile doxygen documentation
-$ google-chrome doc/html/index.html     # Open doxygen documentation with your favourite web browser
+git checkout -b doc origin/doc        # Switch to branch doc
+sudo apt-get install doxygen graphviz # Download programs: doxygen, dot
+./bootstrap
+make doxygen-run                      # Compile doxygen documentation
+google-chrome doc/html/index.html     # Open doxygen documentation with your favourite web browser
 ```
 ![Forest class](classForest__coll__graph.png)
 

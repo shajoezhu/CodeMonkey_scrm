@@ -73,9 +73,9 @@ Testsuite summary for scrm 1.3.2.9000
 $ cat .travis.yml
 ```
 
-```
-
-```
+```bash
+git checkout -b omp origin/omp
+cd ..
 aclocal
 autoconf
 automake -a
@@ -83,11 +83,11 @@ automake -a
 ```
 
 cd ..
-time ./scrm 30 1000 -r 100 10000 -seed 1 > /dev/null
+time ./codeMonkey_scrm 30 1000 -r 100 10000 -seed 1 > /dev/null
 real	0m6.035s
 user	0m6.001s
 sys	0m0.012s
-time ./scrm_omp 30 1000 -r 100 10000 -seed 1 > /dev/null
+time ./codeMonkey_scrm_omp 30 1000 -r 100 10000 -seed 1 > /dev/null
 real	0m2.081s
 user	0m7.533s
 sys	0m0.658s

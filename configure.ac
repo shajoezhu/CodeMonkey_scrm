@@ -11,9 +11,6 @@ AC_CANONICAL_HOST
 # Checks for programs.
 AC_PROG_RANLIB
 
-# Check for C++11
-AX_CXX_COMPILE_STDCXX_11(,mandatory)
-
 # Checks for header files for scrm.
 AC_HEADER_STDC
 AC_LANG(C++) 

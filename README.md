@@ -1,12 +1,21 @@
 # CodeMonkey_scrm
 
+ - (Import scrm as a submodule)[#hearder1]
+ - Brief introduction on Automake
+ - Tests utility
+ - Doxygen
+ - Continuous intergration
+ - Write a simple program
+
+## Import scrm as a submodule<a name="hearder1"></a>
 ```bash
-git clone https://github.com/shajoezhu/CodeMonkey_scrm.git
+git clone https://github.com/shajoezhu/CodeMonkey_scrm.git CodeMonkey_scrm
 cd CodeMonkey_scrm
 ```
 
 ```bash
-git submodule add https://github.com/scrm/scrm.git
+$ git submodule init
+$ git submodule update
 ```
 
 ```bash
@@ -16,33 +25,17 @@ $ cat .gitmodules
 	url = https://github.com/scrm/scrm.git
 ```
 
+Newly add a git submodule.
 ```bash
-$ git submodule init
-$ git submodule update
+git submodule add https://github.com/scrm/scrm.git
 ```
 
 Compile scrm
 ```bash
 $ cd scrm
 $ ./bootstrap
-$make -mj4
+$ make -mj4
 ```
-
-```bash
-$ git checkout -b doc origin/doc
-$ sudo apt-get install doxygen graphviz
-$ ./bootstrap
-$ make doxygen-run
-$ google-chrome doc/html/index.html 
-```
-
-file:///home/joezhu/CodeMonkey_scrm/scrm/doc/html/classForest.html
-file:///home/joezhu/CodeMonkey_scrm/scrm/doc/html/classParam.html
-file:///home/joezhu/CodeMonkey_scrm/scrm/doc/html/classModel.html
-
-goto
-Forest (Model *model, RandomGenerator *random_generator)
-sampleNextGenealogy ()
 
 ```bash
 $ ls tests/unittests/
@@ -73,6 +66,15 @@ Testsuite summary for scrm 1.3.2.9000
 $ cat .travis.yml
 ```
 
+
+```bash
+$ git checkout -b doc origin/doc
+$ sudo apt-get install doxygen graphviz
+$ ./bootstrap
+$ make doxygen-run
+$ google-chrome doc/html/index.html 
+```
+
 ```bash
 git checkout -b omp origin/omp
 cd ..
@@ -92,10 +94,3 @@ real	0m2.081s
 user	0m7.533s
 sys	0m0.658s
 ```
-
- - Import scrm as a submodule
- - Automake
- - Doxygen
- - Write a simple program
- - Tests utility
- - Continuous intergration

@@ -36,7 +36,7 @@ $ ./bootstrap
 $ make -mj4
 ```
 
-## Testing utilitye<a name="unittest"></a>
+## Testing utility<a name="unittest"></a>
 ```bash
 $ ls tests/unittests/
 $ make check -mj4
@@ -73,8 +73,9 @@ $ ./bootstrap
 $ make doxygen-run                      # Compile doxygen documentation
 $ google-chrome doc/html/index.html     # Open doxygen documentation with your favourite web browser
 ```
+![Forest class](classForest__coll__graph.png)
 
-##Write a simple program]<a name="scrm"></a>
+## Write a simple program<a name="scrm"></a>
 ```bash
 git checkout -b omp origin/omp  # Switch to branch omp
 cd ..                           # Switch to CodeMonkey_scrm root diretory

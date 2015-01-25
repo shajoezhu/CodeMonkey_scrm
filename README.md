@@ -14,8 +14,8 @@ cd CodeMonkey_scrm
 ```
 Update submodule
 ```bash
-$ git submodule init
-$ git submodule update
+$ git submodule init         # Initialize the local configuration file
+$ git submodule update       # Fetch all the data from scrm
 ```
 ```bash
 $ cat .gitmodules 
@@ -46,9 +46,6 @@ You should see
 ```
 PASS: unit_tests
 PASS: algorithm_tests
-make[3]: Entering directory '/home/joezhu/CodeMonkey_scrm/scrm'
-make[3]: Nothing to be done for 'all'.
-make[3]: Leaving directory '/home/joezhu/CodeMonkey_scrm/scrm'
 ============================================================================
 Testsuite summary for scrm 1.3.2.9000
 ============================================================================
@@ -70,20 +67,20 @@ For more details, please refer to https://travis-ci.org/scrm/scrm/builds/4537200
 
 ## Doxygen<a name="doxygen"></a>
 ```bash
-$ git checkout -b doc origin/doc
-$ sudo apt-get install doxygen graphviz
+$ git checkout -b doc origin/doc        # Switch to branch doc
+$ sudo apt-get install doxygen graphviz # Download programs: doxygen, dot
 $ ./bootstrap
-$ make doxygen-run
-$ google-chrome doc/html/index.html 
+$ make doxygen-run                      # Compile doxygen documentation
+$ google-chrome doc/html/index.html     # Open doxygen documentation with your favourite web browser
 ```
 
 ##Write a simple program]<a name="scrm"></a>
 ```bash
-git checkout -b omp origin/omp
-cd ..
-aclocal
-autoconf
-automake -a
+git checkout -b omp origin/omp  # Switch to branch omp
+cd ..                           # Switch to CodeMonkey_scrm root diretory
+aclocal                         # Generate aclocal.m4 from configure.ac file
+autoconf                        # Generate configuration file
+automake -a                     # Generate Makefile
 ./configure
 make -mj4
 

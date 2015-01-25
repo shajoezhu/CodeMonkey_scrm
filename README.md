@@ -1,35 +1,34 @@
 # CodeMonkey_scrm
 
- - [Import scrm as a submodule](#hearder1)
- - Brief introduction on Automake
- - Tests utility
- - Doxygen
- - Continuous intergration
- - Write a simple program
+ - [Import scrm as a submodule](#submodule)
+ - [Brief introduction on Automake](#automake)
+ - [Testing utility](#unittest)
+ - [Continuous intergration](#travis)
+ - [Doxygen](#doxygen)
+ - [Write a simple program](#scrm)
 
-## Import scrm as a submodule<a name="hearder1"></a>
+## Import scrm as a submodule<a name="submodule"></a>
 ```bash
 git clone https://github.com/shajoezhu/CodeMonkey_scrm.git CodeMonkey_scrm
 cd CodeMonkey_scrm
 ```
-
+Update submodule
 ```bash
 $ git submodule init
 $ git submodule update
 ```
-
 ```bash
 $ cat .gitmodules 
 [submodule "scrm"]
 	path = scrm
 	url = https://github.com/scrm/scrm.git
 ```
-
 Newly add a git submodule.
 ```bash
 git submodule add https://github.com/scrm/scrm.git
 ```
 
+## Brief introduction on Automake<a name="automake"></a>
 Compile scrm
 ```bash
 $ cd scrm
@@ -37,6 +36,7 @@ $ ./bootstrap
 $ make -mj4
 ```
 
+## Testing utilitye<a name="unittest"></a>
 ```bash
 $ ls tests/unittests/
 $ make check -mj4
@@ -62,11 +62,13 @@ Testsuite summary for scrm 1.3.2.9000
 ============================================================================
 ```
 
+## Continuous intergration<a name="travis"></a>
 ```
 $ cat .travis.yml
 ```
+For more details, please refer to https://travis-ci.org/scrm/scrm/builds/45372001
 
-
+## Doxygene<a name="doxygen"></a>
 ```bash
 $ git checkout -b doc origin/doc
 $ sudo apt-get install doxygen graphviz
@@ -75,6 +77,7 @@ $ make doxygen-run
 $ google-chrome doc/html/index.html 
 ```
 
+##Write a simple program]<a name="scrm"></a>
 ```bash
 git checkout -b omp origin/omp
 cd ..
@@ -82,9 +85,8 @@ aclocal
 autoconf
 automake -a
 ./configure
-```
+make -mj4
 
-cd ..
 time ./codeMonkey_scrm 30 1000 -r 100 10000 -seed 1 > /dev/null
 real	0m6.035s
 user	0m6.001s

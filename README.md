@@ -25,6 +25,7 @@ cat .gitmodules            # It shows the included submodule information, as the
 ```
 Newly add a git submodule.
 ```bash
+git submodule init         # Initialize the local configuration file
 git submodule add https://github.com/scrm/scrm.git
 ```
 

@@ -6,6 +6,8 @@
  - [Continuous intergration](#travis)
  - [Doxygen](#doxygen)
  - [Write a simple program](#scrm)
+  
+A good git tutorial can be found at https://www.atlassian.com/git/tutorials.
 
 ## Import scrm as a submodule<a name="submodule"></a>
 ```bash
@@ -25,7 +27,7 @@ cat .gitmodules            # It shows the included submodule information, as the
 ```
 Newly add a git submodule.
 ```bash
-git submodule init         # Initialize the local configuration file
+~git submodule init         # Initialize the local configuration file~ # This is actually not needed
 git submodule add https://github.com/scrm/scrm.git
 ```
 
